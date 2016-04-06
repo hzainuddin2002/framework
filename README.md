@@ -7,15 +7,17 @@ For this example to actually run you'll need to set up a MySQL instance with:
 
 1) Schema named 'test_schema'
 2) Table under 'test_schema' named automobiles
+
 Cols:
-id INT(11) PK, NN, AI
-type VARCHAR(45)
-number_of_wheels VARCHAR(45)
-color VARCHAR(45)
-make VARCHAR(45)
-model VARCHAR(45)
+- id INT(11) PK, NN, AI
+- type VARCHAR(45)
+- number_of_wheels VARCHAR(45)
+- color VARCHAR(45)
+- make VARCHAR(45)
+- model VARCHAR(45)
 
 3) Table under 'test_schema' named users
+
 Cols:
 - id INT(11) PK, NN, AI
 - first_name VARCHAR(45)
