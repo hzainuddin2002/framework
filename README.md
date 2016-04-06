@@ -6,6 +6,7 @@ For this example to actually run you'll need to set up a MySQL instance with:
 **DB Stuff**
 
 1) Schema named 'test_schema'
+
 2) Table under 'test_schema' named *automobiles*
 
 Cols:
