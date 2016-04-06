@@ -4,6 +4,7 @@ Modified Silex to allow Controllers, Models and DAOs using an Autoloader.
 For this example to actually run you'll need to set up a MySQL instance with:
 
 DB Stuff
+
 1) Schema named 'test_schema'
 2) Table under 'test_schema' named automobiles
 	Cols:
@@ -25,10 +26,13 @@ DB Stuff
 4) Populate both tables with some information
 
 Code Stuff
+
 1) Pull down code somewhere PHP can run
 2) Run Composer
 3) Add correct config info in configs/config.php for MySQL instance
 
+
 Using POSTMAN or in a browser go to:
+
 http://YOUR_URL/api/v2/test
 	- if working you should see a message telling you the API is working
