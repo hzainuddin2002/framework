@@ -5,9 +5,9 @@ For this example to actually run you'll need to set up a MySQL instance with:
 
 **DB Stuff**
 
-1) Schema named 'test_schema'
+1) Make a schema named 'test_schema'
 
-2) Table under 'test_schema' named *automobiles*
+2) Make a table under 'test_schema' named *automobiles*
 
 Cols:
 - id INT(11) PK, NN, AI
@@ -17,7 +17,7 @@ Cols:
 - make VARCHAR(45)
 - model VARCHAR(45)
 
-3) Table under 'test_schema' named *users*
+3) Make a table under 'test_schema' named *users*
 
 Cols:
 - id INT(11) PK, NN, AI
@@ -32,7 +32,7 @@ Cols:
 
 1) Pull down code somewhere PHP can run
 2) Run Composer
-3) Add correct config info in configs/config.php for MySQL instance
+3) Add correct configs info in configs/config.php for MySQL instance
 
 
 **Using POSTMAN or in a browser go to:**
