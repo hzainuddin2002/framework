@@ -17,11 +17,11 @@ model VARCHAR(45)
 
 3) Table under 'test_schema' named users
 Cols:
-..id INT(11) PK, NN, AI
-..first_name VARCHAR(45)
-..last_name VARCHAR(45)
-..dob VARCHAR(45)
-..phone_num VARCHAR(45)
+- id INT(11) PK, NN, AI
+- first_name VARCHAR(45)
+- last_name VARCHAR(45)
+- dob VARCHAR(45)
+- phone_num VARCHAR(45)
 
 4) Populate both tables with some information
 
