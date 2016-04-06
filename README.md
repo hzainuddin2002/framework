@@ -39,3 +39,6 @@ Cols:
 
 http://YOUR_URL/api/v2/test
 if working you should see a message telling you the API is working
+
+** If you get this running and would like to mess around with it.  Try adding a 'get Automobile by model' and/or
+a 'create a new Automobile' endpoint ** 
