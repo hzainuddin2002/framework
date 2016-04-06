@@ -1,0 +1,5 @@
+vendor/*
+error/*
+sftp-config*
+noindex/*
+icons/*
