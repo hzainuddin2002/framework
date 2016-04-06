@@ -134,8 +134,8 @@ $app->match('/api/v2/automake', function(Request $request) use ($app)
 
 	// Turn the models into keyed arrays for JSON'izing
 	$jsonArr = array();
-	for ($i = 0; $i < sizeof($autoArr); $i++) {
-		$jsonArr[] = $autoArr[$i]->getAsArray();
+	for ($i = 0; $i < sizeof($autoModelArr); $i++) {
+		$jsonArr[] = $autoModelArr[$i]->getAsArray();
 	}
 
 	return $app->json($jsonArr);

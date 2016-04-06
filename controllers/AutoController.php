@@ -16,28 +16,35 @@ class AutoController
 			return new \models\AutoModel();
 		}
 
-		$autoData = $this->autoDao->getAutoByMake($make);
+		// Get DB data on autos
+		$autoDataArr = $this->autoDao->getAutoByMake($make);
 		
 		// Close the SQL connection
 		$this->autoDao->closeConnection();
 
 		// turn data into model
+		$autoModelArr = $this->createAutoModelFromData($autoDataArr);
+
+		return $autoModelArr;
+	}
+
+	private function createAutoModelFromData($autoDataArr)
+	{
 		$resArr = array();
-		for ($i = 0; $i < sizeof($autoData); $i++) {
+		for ($i = 0; $i < sizeof($autoDataArr); $i++) {
 			$tempAutoMod = new \models\AutoModel(
-				$autoData[$i]['id'],
-				$autoData[$i]['type'],
-				$autoData[$i]['number_of_wheels'],
-				$autoData[$i]['color'],
-				$autoData[$i]['make'],
-				$autoData[$i]['model']
+				$autoDataArr[$i]['id'],
+				$autoDataArr[$i]['type'],
+				$autoDataArr[$i]['number_of_wheels'],
+				$autoDataArr[$i]['color'],
+				$autoDataArr[$i]['make'],
+				$autoDataArr[$i]['model']
 			);
 
 			$resArr[] = $tempAutoMod;
 		}
 
 		return $resArr;
-		
 	}
 }
 ?>
