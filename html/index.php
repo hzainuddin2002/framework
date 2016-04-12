@@ -1,7 +1,7 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+ 
 /**
  * Set the error handling
  */
@@ -38,7 +38,7 @@ $app->match('/api/v2/test', function (Request $request) use ($app)
 {
 	$json = array("message" => "API is working.");
 	
-	return $app->json($json, 200);
+	return $app->json($json);
 });
 
 /**
@@ -50,10 +50,10 @@ $app->match('/api/v2/userid', function(Request $request) use ($app)
 	$id = $request->get('id');
 
 	// Instantial the User Controller
-	$userCtrl = new \controllers\UserController();
+	$userSrvc = new \services\UserService();
 
 	// Get user object based on user id
-	$userModelsArr = $userCtrl->getUserDataById($id);
+	$userModelsArr = $userSrvc->getUserDataById($id);
 
 	// Convert the User Objects into keyed arrays
 	$userArr = array();
@@ -74,15 +74,15 @@ $app->match('/api/v2/username', function(Request $request) use ($app)
 	$name = $request->get('name');
 
 	// Instantiate User Controller
-	$userCtrl = new \controllers\UserController();
+	$userSrvc = new \services\UserService();
 
 	// If _all is requested then return ALL users
 	$userModelsArr = array();
 	if ($name == '_all') {
-		$userModelsArr = $userCtrl->getAllUsers();
+		$userModelsArr = $userSrvc->getAllUsers();
 	} else {
 		// Get User Obj by user first name
-		$userModelsArr = $userCtrl->getUserDataByName($name);	
+		$userModelsArr = $userSrvc->getUserDataByName($name);	
 	}
 
 	// Turn user models into array to be JSON'ized
@@ -110,10 +110,10 @@ $app->match('/api/v2/createuser', function(Request $request) use ($app)
 	}
 
 	// Instantiate the User Controller
-	$userCtrl = new \controllers\UserController();
+	$userSrvc = new \services\UserService();
 
 	// Create the user
-	$userCtrl->createNewUser($fName, $lName, $dob, $phone);
+	$userSrvc->createNewUser($fName, $lName, $dob, $phone);
 
 	return $app->json(array("message" => "User Created"), 201);
 });
@@ -127,10 +127,10 @@ $app->match('/api/v2/automake', function(Request $request) use ($app)
 	$make = $request->get('make');
 	
 	// Instantiate auto controller
-	$autoCtrl = new \controllers\AutoController();
+	$autoSrvc = new \services\AutoService();
 
 	// Get the array of auto model instances
-	$autoModelArr = $autoCtrl->getAutoByMake($make);
+	$autoModelArr = $autoSrvc->getAutoByMake($make);
 
 	// Turn the models into keyed arrays for JSON'izing
 	$jsonArr = array();

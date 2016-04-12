@@ -1,10 +1,9 @@
 <?php
-namespace controllers;
+namespace services;
 
-class UserController
+class UserService
 {
 	private $userDao;
-	private $userModel;
 
 	function __construct()
 	{

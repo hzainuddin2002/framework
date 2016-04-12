@@ -1,13 +1,39 @@
 <?php
 namespace models;
 
+/**
+ * Models Automobile Data
+ */
 class AutoModel
 {
+	/**
+	 * int $id ID from database
+	 */
 	private $id;
+
+	/**
+	 * string $type Represents automobile type (ie car, truck)
+	 */
 	private $type;
+
+	/**
+	 * int $numberOfWheels Number of wheels for automobile
+	 */
 	private $numberOfWheels;
+
+	/**
+	 * string $color Color of automobile
+	 */
 	private $color;
+
+	/**
+	 * string $make Make of automobile
+	 */
 	private $make;
+
+	/**
+	 * string $model Model of automobile
+	 */
 	private $model;
 
 	function __construct($id = null, $type = null, $numWhls = null, $color = null, $make = null, $model = null)

@@ -1,8 +1,14 @@
 <?php
-namespace controllers;
+namespace services;
 
-class AutoController
+/**
+ * Automobile Controller
+ */
+class AutoService
 {
+	/**
+	 * AutomobileDao $auto Allows access to the DB
+	 */
 	private $autoDao;
 
 	function __construct()
@@ -10,6 +16,13 @@ class AutoController
 		$this->autoDao = new \dao\AutomobileDao();
 	}
 
+	/**
+	 * Get Automobile data by make
+	 *
+	 * @param string $make Make of automobile
+	 *
+	 * @return array $autoModelArr Array of AutoModel objects
+	 */
 	public function getAutoByMake($make)
 	{
 		if (!isset($make)) {
@@ -28,6 +41,13 @@ class AutoController
 		return $autoModelArr;
 	}
 
+	/**
+	 * Takes DB data as array and creates an array of AutoModel objects
+	 *
+	 * @param array $autoDataArr Array of automobile DB data
+	 *
+	 * @return array $resArr Array of AutoModel objects
+	 */
 	private function createAutoModelFromData($autoDataArr)
 	{
 		$resArr = array();
