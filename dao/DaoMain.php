@@ -18,10 +18,10 @@ class DaoMain
 	private function setConnection()
 	{
 		$conn = mysqli_connect(
-			$this->config->getHost(),
-			$this->config->getUsername(),
-			$this->config->getPassword(),
-			$this->config->getDataBase()
+			$this->config->host,
+			$this->config->username,
+			$this->config->password,
+			$this->config->database
 		);
 
 		if (mysqli_connect_errno()) {
